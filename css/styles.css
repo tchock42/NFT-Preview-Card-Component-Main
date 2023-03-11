@@ -1,0 +1,170 @@
+:root{
+    --softBlue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --cyanTransparent: hsl(178, 100%, 50%, .2);
+
+    --veryDarkBlue1: hsl(217, 54%, 11%);
+    --veryDarkBlue2: hsl(216, 50%, 16%);
+    --veryDarkBlue3: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+}
+
+html{
+    font-size: 62.5%;   /*62.5% = 16px */
+    box-sizing: border-box; /*Hack para box model*/
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body{
+    font-size: 1.8rem;
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--veryDarkBlue1);
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center; /*alinea horizontalmente*/
+    
+}
+h1 {
+    font-size: 2.2rem;
+    
+}
+h2{
+    font-size: 1.6rem;
+    
+}
+h3{
+    font-size: 1.6rem;
+}
+h1, h2, h3{
+    text-align: left;
+}
+p{
+    margin: 0;
+    color:var(--softBlue);
+    font-size: 1.7rem;
+    font-weight: 300;
+}
+main{
+    width: 35rem;
+    height: 60rem;
+    background-color: var(--veryDarkBlue2);
+    padding:2.2rem;
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin: 5rem 0;
+}
+
+.container{
+    position: relative;
+    width: 30rem;
+    height: 30rem;
+    border-radius: 1rem;
+}
+.main_image{
+    max-width: 30rem;
+    height: 30rem;
+    border-radius: 1rem;
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    max-width: 100%;
+    opacity: 0; /*no-visible*/
+    transition: .3s ease;
+    background-color: var(--cyanTransparent);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container:hover .overlay{
+    opacity: 1;
+    cursor: pointer;
+}
+.icon{
+    position: absolute;
+    background-image: url("../images/icon-view.svg");
+    background-repeat: no-repeat;
+    width: 4.8rem;
+    height: 4.8rem;
+}
+
+
+
+.title{
+    color:var(--white);
+    margin: 1.4rem 0 0.6rem 0;
+}
+.title:hover{
+    color: var(--cyan);
+    cursor: pointer;
+}
+.two-columns{
+    display: flex;
+    justify-content: space-between;
+    padding:2.5rem 0 3rem 0;
+    border-bottom: 1px solid var(--veryDarkBlue3); 
+}
+.numbers{
+    color: var(--cyan);
+    margin: 0 0 0.5rem 0;
+}
+.numbers::before{
+    content: url("../images/icon-ethereum.svg");
+    display:inline-block;
+    align-items: center;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+.date{
+    color:var(--softBlue);
+    margin: 0;
+    font-weight: 400;
+}
+.date::before{
+    content: url("../images/icon-clock.svg");
+    display:inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+.autor{
+    margin:2rem 0;
+    display: flex;
+    justify-content:start;
+}
+.avatar_image{
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 1px solid var(--white); 
+    border-radius: 16.5rem;
+}
+.jules{
+    padding:0;
+    margin:1rem;
+    font-size: 1.5rem;
+}
+span{
+    color:var(--white);
+}
+span:hover{
+    color:var(--cyan);
+    cursor: pointer;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
